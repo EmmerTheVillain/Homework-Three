@@ -183,27 +183,28 @@ function generatePassword() {
 
    // Conditional statement that adds array of special characters into array of possible characters based on user input
   // Push new random special character to guaranteedCharacters
-  if (options.hasSpecialCharacters) {
+  if (options.hasSpecialCharacters = true) {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
     guaranteedCharacters.push(getRandom(specialCharacters));
+    console.log(possibleCharacters);
   }
 
   //conditional to see if lower case characters to be in password
   //push new lower case characters to guaranteedCharacters
-  if (options.hasLowerCaseCharacters) {
+  if (options.hasLowerCaseCharacters = true) {
     possibleCharacters = possibleCharacters.concat(lowerCasedAlphas);
     guaranteedCharacters.push(getRandom(lowerCasedAlphas));
   }
 
   //conditional to see if upper case characters to be in password
   //push new upper case characters to guaranteedCharacters
-  if (options.hasUpperCaseCharacters) {
+  if (options.hasUpperCaseCharacters = true) {
     possibleCharacters = possibleCharacters.concat(upperCasedAlphas);
     guaranteedCharacters.push(getRandom(upperCasedAlphas));
   }
   //conditional to see if numeral characters to be in password
   //push numeral characters to guaranteedCharacters
-  if (options.hasNumerals) {
+  if (options.hasNumerals = true) {
     possibleCharacters = possibleCharacters.concat(numeralCharacters);
     guaranteedCharacters.push(getRandom(numeralCharacters));
   }
@@ -213,13 +214,15 @@ function generatePassword() {
     var possibleCharacter= getRandom(possibleCharacters);
     result.push(possibleCharacter);
   }
-  //adds one of the characters for the guaranteed type
-  for(var i = 0; i < guaranteedCharacters.length; i++){
-    result[i] = guaranteedCharacters[i];
-  }
-
+  // //adds one of the characters for the guaranteed type
+  // for(var i = 0; i < guaranteedCharacters.length; i++){
+  //   result[i] = guaranteedCharacters[i];
+  // }
+  console.log(possibleCharacters);
+  console.log(possibleCharacter);
+console.log(result);
     // Transform the result into a string and pass into writePassword
-    return result.join('');
+    return result.join(''); 
 }
 var generateBtn = document.querySelector("#generate");
 
@@ -229,7 +232,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+console.log("password");
 }
 
 // Add event listener to generate button
