@@ -1,12 +1,89 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var specialCharacters = [
+  '!',
+  '@',
+  '#',
+  '$',
+  '%',
+  '^',
+  '&',
+  '*',
+  '(',
+  ')',
+  '_',
+  '-',
+  '+',
+  '=',
+  '/',
+  '"',
+  '?',
+  ';',
+  ':',
+  ',',
+  '<',
+  '.',
+  '>',
+  '~',
+];
 
-
-//---- Let me start by saying this code is totally optional and if you want to go in a completely different direction I support it. Go with your gut and what works for you because it will help you figure out your thought process.Let us know if you have any questions and don't be afraid to start a dialogue with fellow students!  ----------------------- Delete this before you push your code to github LOL 
-
-
-
+var lowerCasedAlphas = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+];
+var upperCasedAlphas = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
 
 function getPasswordOptions() {
 
