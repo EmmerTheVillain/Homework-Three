@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//establish vars for lower case, upper case and special characters
 var specialCharacters = [
   '!',
   '@',
@@ -100,6 +101,15 @@ function getPasswordOptions() {
   if (Number.isNaN(length)) {
     alert('Password length must be provided as a number');
     return null;
+  }
+
+  //setting password length between 8 and 128 characters
+  if(length < 8){
+    alert("password must be at least 8 characters long");
+  }
+
+  if(length > 128){
+    alert("password must be 128 characters or less");
   }
 
   // Variable to store boolean regarding the inclusion of special characters
