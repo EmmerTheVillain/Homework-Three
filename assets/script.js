@@ -211,8 +211,8 @@ function generatePassword() {
 
 //for loop to generate character from possible characters list
   for(var i = 0; i < options.length; i++) {
-    var possibleCharacter= getRandom(possibleCharacters);
-    result.push(possibleCharacter);
+    var Character= getRandom(possibleCharacters);
+    result.push(Character);
   }
   //adds one of the characters for the guaranteed type
   for(var i = 0; i < guaranteedCharacters.length; i++){
