@@ -207,10 +207,11 @@ function generatePassword() {
     possibleCharacters = possibleCharacters.concat(numeralCharacters);
     guaranteedCharacters.push(getRandom(numeralCharacters));
   }
-//for loop to generate characters from possible character list
+
+//for loop to generate character from possible characters list
   for(var i = 0; i < options.length; i++) {
-    var possibleCharacters = getRandom(possibleCharacters);
-    result.push(possibleCharacters);
+    var possibleCharacter= getRandom(possibleCharacters);
+    result.push(possibleCharacter);
   }
   //adds one of the characters for the guaranteed type
   for(var i = 0; i < guaranteedCharacters.length; i++){
@@ -220,6 +221,7 @@ function generatePassword() {
     // Transform the result into a string and pass into writePassword
     return result.join('');
 }
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
