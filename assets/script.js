@@ -115,8 +115,16 @@ function getPasswordOptions() {
   // Variable to store boolean regarding the inclusion of special characters
   var hasSpecialCharacters = confirm(
     'Click OK to confirm including special characters.'
+    
   );
-
+  //var to store boolean of if upper case characters are to be used
+  var hasUpperCaseCharacters = confirm(
+    'Click OK to confirm including Upper-Case characters.'
+    
+  );
+  //debug output to check if hasSpecialCharacters and hasUpperCharacters works
+  console.log("special characters " + hasSpecialCharacters);
+  console.log("Upper-Case characters " + hasUpperCaseCharacters);
    // Object to store user input
    var passwordOptions = {
     length: length,
