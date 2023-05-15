@@ -128,16 +128,24 @@ function getPasswordOptions() {
   // Variable to store boolean regarding the inclusion of special characters
   var hasSpecialCharacters = confirm(
     'Click OK to confirm including special characters.'
-    
+  );
+  //var to store boolean of if lower case characters are to be used
+  var hasLowerCaseCharacters = confirm(
+    'Click OK to confirm including Lower-Case characters.'
   );
   //var to store boolean of if upper case characters are to be used
   var hasUpperCaseCharacters = confirm(
     'Click OK to confirm including Upper-Case characters.'
-    
   );
-  //debug output to check if hasSpecialCharacters and hasUpperCharacters works
+  //var to store boolean if number characters are to be used
+  var hasNumerals = confirm(
+    'Click OK to confirm including Numbers.'
+  );
+  //debug output to check if hasSpecialCharacters, hasLowerCaseCharacters, hasUpperCharacters and hasNumerals works
   console.log("special characters " + hasSpecialCharacters);
+  console.log("Lower-Case characters " + hasLowerCaseCharacters);
   console.log("Upper-Case characters " + hasUpperCaseCharacters);
+  console.log("Numeral characters " + hasNumerals);
    // Object to store user input
    var passwordOptions = {
     length: length,
@@ -180,8 +188,34 @@ function generatePassword() {
     guaranteedCharacters.push(getRandom(specialCharacters));
   }
 
-  
+  //conditional to see if lower case characters to be in password
+  //push new lower case characters to guaranteedCharacters
+  if (options.hasLowerCaseCharacters) {
+    possibleCharacters = possibleCharacters.concat(lowerCasedAlphas);
+    guaranteedCharacters.push(getRandom(lowerCasedAlphas));
+  }
 
+  //conditional to see if upper case characters to be in password
+  //push new upper case characters to guaranteedCharacters
+  if (options.hasUpperCaseCharacters) {
+    possibleCharacters = possibleCharacters.concat(upperCasedAlphas);
+    guaranteedCharacters.push(getRandom(upperCasedAlphas));
+  }
+  //conditional to see if numeral characters to be in password
+  //push numeral characters to guaranteedCharacters
+  if (options.hasNumerals) {
+    possibleCharacters = possibleCharacters.concat(numeralCharacters);
+    guaranteedCharacters.push(getRandom(numeralCharacters));
+  }
+//for loop to generate characters from possible character list
+  for(var i = 0; i < options.length; i++) {
+    var possibleCharacters = getRandom(possibleCharacters);
+    result.push(possibleCharacters);
+  }
+  //adds one of the characters for the guaranteed type
+  for(var i = 0; i < guaranteedCharacters.length; i++){
+    result[i] = guaranteedCharacters[i];
+  }
 
     // Transform the result into a string and pass into writePassword
     return result.join('');
