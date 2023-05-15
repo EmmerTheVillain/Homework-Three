@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//establish vars for lower case, upper case and special characters
+//establish vars for lower case, upper case, numeral and special characters
 var specialCharacters = [
   '!',
   '@',
@@ -27,6 +27,19 @@ var specialCharacters = [
   '.',
   '>',
   '~',
+];
+var numeralCharacters = [
+
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '0',
 ];
 
 var lowerCasedAlphas = [
