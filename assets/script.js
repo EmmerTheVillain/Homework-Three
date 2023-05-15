@@ -142,14 +142,14 @@ function getPasswordOptions() {
     'Click OK to confirm including Numbers.'
   );
   //debug output to check if hasSpecialCharacters, hasLowerCaseCharacters, hasUpperCharacters and hasNumerals works
-  console.log("special characters " + hasSpecialCharacters);
-  console.log("Lower-Case characters " + hasLowerCaseCharacters);
-  console.log("Upper-Case characters " + hasUpperCaseCharacters);
-  console.log("Numeral characters " + hasNumerals);
-  console.log(typeof hasSpecialCharacters);
-  console.log(typeof hasLowerCaseCharacters);
-  console.log(typeof hasUpperCaseCharacters);
-  console.log(typeof hasNumerals);
+  // console.log("special characters " + hasSpecialCharacters);
+  // console.log("Lower-Case characters " + hasLowerCaseCharacters);
+  // console.log("Upper-Case characters " + hasUpperCaseCharacters);
+  // console.log("Numeral characters " + hasNumerals);
+  // console.log(typeof hasSpecialCharacters);
+  // console.log(typeof hasLowerCaseCharacters);
+  // console.log(typeof hasUpperCaseCharacters);
+  // console.log(typeof hasNumerals);
   
    // Object to store user input
    var passwordOptions = {
@@ -160,7 +160,7 @@ function getPasswordOptions() {
     hasNumerals: hasNumerals,
     // add more properties and values here
    }
-   console.log(passwordOptions);
+  //  console.log(passwordOptions);
    return passwordOptions;
 }
 
@@ -186,7 +186,7 @@ function generatePassword() {
 
   // Array to contain one of each type of chosen character to ensure each will be used
   var guaranteedCharacters = [];
-  console.log(options.hasSpecialCharacters);
+  // console.log(options.hasSpecialCharacters);
   // Check if an options object exists, if not exit the function
   if (!options) return null;
 
@@ -195,9 +195,9 @@ function generatePassword() {
   if (options.hasSpecialCharacters === true) {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
     guaranteedCharacters.push(getRandom(specialCharacters));
-    console.log(options.hasSpecialCharacters);
-    console.log(typeof options.hasSpecialCharacters);
-    console.log(possibleCharacters);
+    // console.log(options.hasSpecialCharacters);
+    // console.log(typeof options.hasSpecialCharacters);
+    // console.log(possibleCharacters);
   }
 
   //conditional to see if lower case characters to be in password
@@ -205,7 +205,7 @@ function generatePassword() {
   if (options.hasLowerCaseCharacters === true) {
     possibleCharacters = possibleCharacters.concat(lowerCasedAlphas);
     guaranteedCharacters.push(getRandom(lowerCasedAlphas));
-    console.log(possibleCharacters);
+    // console.log(possibleCharacters);
   }
 
   //conditional to see if upper case characters to be in password
@@ -213,28 +213,28 @@ function generatePassword() {
   if (options.hasUpperCaseCharacters === true) {
     possibleCharacters = possibleCharacters.concat(upperCasedAlphas);
     guaranteedCharacters.push(getRandom(upperCasedAlphas));
-    console.log(possibleCharacters);
+    // console.log(possibleCharacters);
   }
   //conditional to see if numeral characters to be in password
   //push numeral characters to guaranteedCharacters
   if (options.hasNumerals === true) {
     possibleCharacters = possibleCharacters.concat(numeralCharacters);
     guaranteedCharacters.push(getRandom(numeralCharacters));
-    console.log(possibleCharacters);
+    // console.log(possibleCharacters);
   }
 
 //for loop to generate character from possible characters list
   for(var i = 0; i < options.length; i++) {
     var Character= getRandom(possibleCharacters);
     result.push(Character);
-    console.log(result);
+    // console.log(result);
   }
   //adds one of the characters for the guaranteed type
   for(var i = 0; i < guaranteedCharacters.length; i++){
     result[i] = guaranteedCharacters[i];
-    console.log(guaranteedCharacters);
+    // console.log(guaranteedCharacters);
   }
-  console.log(result);
+  // console.log(result);
     // Transform the result into a string and pass into writePassword
     return result.join(''); 
 }
